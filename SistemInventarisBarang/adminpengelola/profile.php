@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -24,6 +23,7 @@
 
     <script src="assets/js/chart-master/Chart.js"></script>
     
+
   </head>
 
   <body>
@@ -35,12 +35,11 @@
       <!--header start-->
       <header class="header black-bg">
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DATA INVENTARIS BARANG</b></a>
+            <a href="index.html" class="logo"><b>PROFILE</b></a>
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="/SistemInvnetarisBarang/login.php">Logout</a></li>
-            	</ul>
+                    <li><a class="logout" href="/SistemInventarisBarang/login.php">Logout</a></li>
             </div>
         </header>
       <!--header end-->
@@ -55,23 +54,20 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
               	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">ADMIN</h5>
+              	  <h5 class="centered">ADMIN PENGELOLA</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>HOME</span>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="pelaporan.php" >
                           <i class="fa fa-book"></i>
-                          <span>Rekap Data</span>
+                          <span>Pelaporan</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="rekapbarang.html">Rekap Data Barang</a></li>
-                          <li><a  href="rekaptanah.html">Rekap Data Tanah</a></li>
-                      </ul>
+
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
@@ -79,9 +75,8 @@
                           <span>Input Data</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="databarang.html">Data Barang</a></li>
-						  <li><a  href="mutasibarang.html">Data Mutasi Barang</a></li>
-						  <li><a  href="datatanah.html">Data Tanah</a></li>
+                          <li><a  href="databarang.php">Data Barang</a></li>
+						  <li><a  href="datatanah.php">Data Tanah</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -90,8 +85,8 @@
                           <span>Data Inventaris</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="invenbarang.html">Inventaris Barang</a></li>
-                          <li><a  href="inventanah.html">Inventaris Tanah</a></li>
+                          <li><a  href="invenbarang.php">Inventaris Barang</a></li>
+                          <li><a  href="inventanah.php">Inventaris Tanah</a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -100,8 +95,8 @@
                           <span>Settings</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="profile.html">Profile</a></li>
-                          <li><a  href="/SistemInvnetarisBarang/login.php">Log Out</a></li>
+                          <li><a  href="profile.php">Profile</a></li>
+                          <li><a  href="/SistemInventarisBarang/login.php">Log Out</a></li>
                       </ul>
                   </li>
 
@@ -109,57 +104,15 @@
               <!-- sidebar menu end-->
           </div>
       </aside>
+	  
       <!--sidebar end-->
+      
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-	  	
-     <section id="main-content">
-          <section class="wrapper">
-	 
-				<h3>DATA INVENTARIS BARANG</h3>
-				<div class="row">
-	                  <div class="col-md-12">
-	                  	  <div class="content-panel">
-	                  	  	  <h4>DATA BARANG</h4>
-	                  	  	  <hr>
-		                      <table class="table">
-		                          <thead>
-		                          <tr>
-		                              <th>NO</th>
-		                              <th>ID BARANG</th>
-		                              <th>NAMA BARANG</th>
-		                          </tr>
-		                          </thead>
-								   <?php
-								   
-										
-										$con=mysqli_connect("localhost","root","","databarang");
-										// Check connection
-										if (mysqli_connect_errno())
-										{
-											echo "Failed to connect to MySQL: " . mysqli_connect_error();
-										}
-
-										$result = mysqli_query($con,"SELECT * FROM invenbarang");
-										
-										$row = mysqli_fetch_array($result)
-										?>
-		                          <tbody>
-		                          <tr>
-									  <td><?php echo $row['id'];?></td>
-		                              <td><?php echo $row['nama_barang'];?></td>
-									  <td><?php echo $row['kondisi_barang'];?></td>              
-		                          </tr>
-		                          </tbody>
-		                      </table>
-	 
-
-
-		</section>
-	</section>
+      
 
       <!--main content end-->
       

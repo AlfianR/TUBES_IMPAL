@@ -23,7 +23,19 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
-    
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="$1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>test</title>
+
+    <?php
+    include_once 'configbarang.php';
+    ?>
   </head>
 
   <body>
@@ -35,11 +47,11 @@
       <!--header start-->
       <header class="header black-bg">
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DATA INVENTARIS BARANG</b></a>
+            <a href="index.html" class="logo"><b>INPUT DATA BARANG</b></a>
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="/SistemInvnetarisBarang/login.php">Logout</a></li>
+                    <li><a class="logout" href="/SistemInventarisBarang/login.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -55,23 +67,20 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
               	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">ADMIN</h5>
+              	  <h5 class="centered">ADMIN PENGELOLA</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>HOME</span>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a href="pelaporan.php" >
                           <i class="fa fa-book"></i>
-                          <span>Rekap Data</span>
+                          <span>Pelaporan</span>
                       </a>
-                      <ul class="sub">
-                          <li><a  href="rekapbarang.html">Rekap Data Barang</a></li>
-                          <li><a  href="rekaptanah.html">Rekap Data Tanah</a></li>
-                      </ul>
+
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
@@ -79,9 +88,8 @@
                           <span>Input Data</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="databarang.html">Data Barang</a></li>
-						  <li><a  href="mutasibarang.html">Data Mutasi Barang</a></li>
-						  <li><a  href="datatanah.html">Data Tanah</a></li>
+                          <li><a  href="databarang.php">Data Barang</a></li>
+						  <li><a  href="datatanah.php">Data Tanah</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -90,8 +98,8 @@
                           <span>Data Inventaris</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="invenbarang.html">Inventaris Barang</a></li>
-                          <li><a  href="inventanah.html">Inventaris Tanah</a></li>
+                          <li><a  href="invenbarang.php">Inventaris Barang</a></li>
+                          <li><a  href="inventanah.php">Inventaris Tanah</a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -100,8 +108,8 @@
                           <span>Settings</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="profile.html">Profile</a></li>
-                          <li><a  href="/SistemInvnetarisBarang/login.php">Log Out</a></li>
+                          <li><a  href="profile.php">Profile</a></li>
+                          <li><a  href="/SistemInventarisBarang/login.php">Log Out</a></li>
                       </ul>
                   </li>
 
@@ -109,6 +117,7 @@
               <!-- sidebar menu end-->
           </div>
       </aside>
+	  
       <!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
@@ -118,52 +127,25 @@
 	  	
      <section id="main-content">
           <section class="wrapper">
-	 
+				
 				<h3>DATA INVENTARIS BARANG</h3>
-				<div class="row">
-	                  <div class="col-md-12">
-	                  	  <div class="content-panel">
-	                  	  	  <h4>DATA BARANG</h4>
-	                  	  	  <hr>
-		                      <table class="table">
-		                          <thead>
-		                          <tr>
-		                              <th>NO</th>
-		                              <th>ID BARANG</th>
-		                              <th>NAMA BARANG</th>
-		                          </tr>
-		                          </thead>
-								   <?php
-								   
-										
-										$con=mysqli_connect("localhost","root","","databarang");
-										// Check connection
-										if (mysqli_connect_errno())
-										{
-											echo "Failed to connect to MySQL: " . mysqli_connect_error();
-										}
+				<form action="insertbarang.php" method="post">
 
-										$result = mysqli_query($con,"SELECT * FROM invenbarang");
-										
-										$row = mysqli_fetch_array($result)
-										?>
-		                          <tbody>
-		                          <tr>
-									  <td><?php echo $row['id'];?></td>
-		                              <td><?php echo $row['nama_barang'];?></td>
-									  <td><?php echo $row['kondisi_barang'];?></td>              
-		                          </tr>
-		                          </tbody>
-		                      </table>
-	 
+					<p>
+						<label for="nama_barang">Nama Barang:</label>
+						<input type="text" name="nama_barang" id="nama_barang">    
+					</p>
 
-
+					<p>
+						<label for="status_barang">Status Barang:</label>
+						<input type="text" name="status_barang" id="status_barang">    
+					</p>
+					<input type="submit" value="Submit">
+				</form>
 		</section>
 	</section>
 
       <!--main content end-->
-      
-  </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
@@ -186,6 +168,7 @@
 	<script src="assets/js/zabuto_calendar.js"></script>	
 	
 	<script type="application/javascript">
+	
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -220,6 +203,6 @@
         }
     </script>
   
-
+	
   </body>
 </html>

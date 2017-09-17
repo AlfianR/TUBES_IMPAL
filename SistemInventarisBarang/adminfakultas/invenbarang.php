@@ -54,35 +54,14 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">ADMIN</h5>
+              	  <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">ADMIN FAKULTAS</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="index.php">
                           <i class="fa fa-dashboard"></i>
                           <span>HOME</span>
                       </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Rekap Data</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="rekapbarang.html">Rekap Data Barang</a></li>
-                          <li><a  href="rekaptanah.html">Rekap Data Tanah</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Input Data</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="databarang.html">Data Barang</a></li>
-						  <li><a  href="mutasibarang.html">Data Mutasi Barang</a></li>
-						  <li><a  href="datatanah.html">Data Tanah</a></li>
-                      </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
@@ -90,8 +69,8 @@
                           <span>Data Inventaris</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="invenbarang.html">Inventaris Barang</a></li>
-                          <li><a  href="inventanah.html">Inventaris Tanah</a></li>
+                          <li><a  href="invenbarang.php">Inventaris Barang</a></li>
+                          <li><a  href="inventanah.php">Inventaris Tanah</a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -100,8 +79,8 @@
                           <span>Settings</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="profile.html">Profile</a></li>
-                          <li><a  href="/SistemInvnetarisBarang/login.php">Log Out</a></li>
+                          <li><a  href="profile.php">Profile</a></li>
+                          <li><a  href="/SistemInventarisBarang/login.php">Log Out</a></li>
                       </ul>
                   </li>
 
@@ -109,7 +88,9 @@
               <!-- sidebar menu end-->
           </div>
       </aside>
+	  
       <!--sidebar end-->
+      
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -128,9 +109,9 @@
 		                      <table class="table">
 		                          <thead>
 		                          <tr>
-		                              <th>NO</th>
 		                              <th>ID BARANG</th>
 		                              <th>NAMA BARANG</th>
+									  <th>STATUS BARANG</th>
 		                          </tr>
 		                          </thead>
 								   <?php
@@ -151,7 +132,7 @@
 		                          <tr>
 									  <td><?php echo $row['id'];?></td>
 		                              <td><?php echo $row['nama_barang'];?></td>
-									  <td><?php echo $row['kondisi_barang'];?></td>              
+									  <td><?php echo $row['status_barang'];?></td>              
 		                          </tr>
 		                          </tbody>
 		                      </table>

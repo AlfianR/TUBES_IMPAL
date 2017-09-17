@@ -1,0 +1,53 @@
+
+    CREATE TABLE userfakultas (
+
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
+        username VARCHAR(50) NOT NULL UNIQUE,
+
+        password VARCHAR(255) NOT NULL,
+		
+		name VARCHAR(255) NOT NULL,
+				
+		nama_fakultas VARCHAR(255) NOT  NULL,
+
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+
+    );
+	
+	CREATE TABLE userpengelola (
+
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
+        username VARCHAR(50) NOT NULL UNIQUE,
+
+        password VARCHAR(255) NOT NULL,
+		
+		name VARCHAR(255) NOT NULL,
+		
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+
+    );	
+	
+	CREATE TABLE invenbarang (
+
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
+        nama_barang VARCHAR(50) NOT NULL UNIQUE,
+
+        status_barang VARCHAR(255) NOT NULL,
+
+        tgl_masuk DATETIME DEFAULT CURRENT_TIMESTAMP
+
+    );
+	
+	CREATE TABLE inventanah (
+
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
+        lokasi_tanah VARCHAR(50) NOT NULL UNIQUE,
+
+        luas_tanah VARCHAR(255) NOT NULL
+
+    );
+    
