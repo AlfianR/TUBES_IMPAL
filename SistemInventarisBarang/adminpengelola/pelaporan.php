@@ -150,10 +150,44 @@
 		</section>
 	</section>
 
-      <!--main content end-->
-      
-  </section>
+	
+	<section id="main-content">
+          <section class="wrapper">
+	 
+				<h3>DATA INVENTARIS TANAH</h3>
+				<div class="row">
+	                  <div class="col-md-12">
+	                  	  <div class="content-panel">
+	                  	  	  <h4>DATA TANAH</h4>
+	                  	  	  <hr>
+									<?php
+								   
+										
+										$con=mysqli_connect("localhost","root","","datatanah");
+										// Check connection
+										if (mysqli_connect_errno())
+										{
+											echo "Failed to connect to MySQL: " . mysqli_connect_error();
+										}
+										
+										$sql = "SELECT * FROM inventanah";
+										$results = $con->query($sql);
+										if ($results->num_rows > 0) {
+											// output data of each row
+											echo "ID "." "."Lokasi Tanah"." "."Luas Tanah"."<br>";
+											while($row = $results->fetch_assoc()) {
+												echo $row['id']." ".$row['lokasi_tanah']." ".$row['luas_tanah']."<br>";
+												
+											}
+										} else {
+											echo "0 results";
+										}
+										?>
 
+		</section>
+	</section>
+
+      <!--main content end-->
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>

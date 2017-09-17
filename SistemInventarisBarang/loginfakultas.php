@@ -100,7 +100,7 @@
 
                                 $_SESSION['username'] = $username;      
 
-                                header("location: /SistemInventarisBarang/adminfakultas/index.html");
+                                header("location: /SistemInventarisBarang/adminfakultas/index.php");
 
                             } else{
 
