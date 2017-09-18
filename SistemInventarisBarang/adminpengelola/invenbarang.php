@@ -123,7 +123,17 @@
 	                  	  <div class="content-panel">
 	                  	  	  <h4>DATA BARANG</h4>
 	                  	  	  <hr>
-									<?php
+									<table class="table">
+		                          <thead>
+		                          <tr>
+		                              <th>NO ID</th>
+		                              <th>NAMA BARANG</th>
+		                              <th>STATUS BARANG</th>
+									  <th>TANGGAL MASUK</th>
+								
+		                          </tr>
+		                          </thead>
+								   <?php
 								   
 										
 										$con=mysqli_connect("localhost","root","","databarang");
@@ -132,20 +142,23 @@
 										{
 											echo "Failed to connect to MySQL: " . mysqli_connect_error();
 										}
-										
-										$sql = "SELECT * FROM invenbarang";
-										$results = $con->query($sql);
-										if ($results->num_rows > 0) {
-											// output data of each row
-											echo "ID Barang"." "."Nama Barang"." "."Status Barang"."<br>";
-											while($row = $results->fetch_assoc()) {
-												echo $row['id']." ".$row['nama_barang']." ".$row['status_barang']."<br>";
-												
-											}
-										} else {
-											echo "0 results";
-										}
+
+										$result = mysqli_query($con,"SELECT * FROM invenbarang");
 										?>
+		                          <tbody>
+								  <?php while($row = mysqli_fetch_array($result)) {
+		                          ?>
+								  <tr>
+									  <td><?php echo $row['id'];?></td>
+		                              <td><?php echo $row['nama_barang'];?></td>
+									  <td><?php echo $row['status_barang'];?></td>    									  
+									  <td><?php echo $row['tgl_masuk'];?></td>
+									  
+								  </tr>
+								  <?php }?>
+								  
+		                          </tbody>
+		                      </table>
 
 		</section>
 	</section>

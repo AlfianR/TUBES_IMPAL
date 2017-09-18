@@ -109,9 +109,10 @@
 		                      <table class="table">
 		                          <thead>
 		                          <tr>
-		                              <th>ID BARANG</th>
+		                              <th>NO ID</th>
 		                              <th>NAMA BARANG</th>
-									  <th>STATUS BARANG</th>
+		                              <th>STATUS BARANG</th>
+									  <th>TANGGAL MASUK</th>
 		                          </tr>
 		                          </thead>
 								   <?php
@@ -125,15 +126,18 @@
 										}
 
 										$result = mysqli_query($con,"SELECT * FROM invenbarang");
-										
-										$row = mysqli_fetch_array($result)
 										?>
 		                          <tbody>
-		                          <tr>
+								  <?php while($row = mysqli_fetch_array($result)) {
+		                          ?>
+								  <tr>
 									  <td><?php echo $row['id'];?></td>
 		                              <td><?php echo $row['nama_barang'];?></td>
-									  <td><?php echo $row['status_barang'];?></td>              
-		                          </tr>
+									  <td><?php echo $row['status_barang'];?></td>    									  
+									  <td><?php echo $row['tgl_masuk'];?></td>
+								  </tr>
+								  <?php }?>
+								  
 		                          </tbody>
 		                      </table>
 	 

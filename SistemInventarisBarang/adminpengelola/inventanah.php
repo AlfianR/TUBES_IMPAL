@@ -122,7 +122,15 @@
 	                  	  <div class="content-panel">
 	                  	  	  <h4>DATA TANAH</h4>
 	                  	  	  <hr>
-									<?php
+									<table class="table">
+		                          <thead>
+		                          <tr>
+		                              <th>NO ID</th>
+		                              <th>LOKASI TANAH</th>
+		                              <th>LUAS BARANG</th>
+		                          </tr>
+		                          </thead>
+								   <?php
 								   
 										
 										$con=mysqli_connect("localhost","root","","datatanah");
@@ -131,20 +139,21 @@
 										{
 											echo "Failed to connect to MySQL: " . mysqli_connect_error();
 										}
-										
-										$sql = "SELECT * FROM inventanah";
-										$results = $con->query($sql);
-										if ($results->num_rows > 0) {
-											// output data of each row
-											echo "ID "." "."Lokasi Tanah"." "."Luas Tanah"."<br>";
-											while($row = $results->fetch_assoc()) {
-												echo $row['id']." ".$row['lokasi_tanah']." ".$row['luas_tanah']."<br>";
-												
-											}
-										} else {
-											echo "0 results";
-										}
+
+										$result = mysqli_query($con,"SELECT * FROM inventanah");
 										?>
+		                          <tbody>
+								  <?php while($row = mysqli_fetch_array($result)) {
+		                          ?>
+								  <tr>
+									  <td><?php echo $row['id'];?></td>
+		                              <td><?php echo $row['lokasi_tanah'];?></td>
+									  <td><?php echo $row['luas_tanah'];?></td>
+								  </tr>
+								  <?php }?>
+								  
+		                          </tbody>
+		                      </table>
 
 		</section>
 	</section>

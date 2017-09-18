@@ -124,15 +124,17 @@
 										}
 
 										$result = mysqli_query($con,"SELECT * FROM inventanah");
-										
-										$row = mysqli_fetch_array($result)
 										?>
 		                          <tbody>
-		                          <tr>
+								  <?php while($row = mysqli_fetch_array($result)) {
+		                          ?>
+								  <tr>
 									  <td><?php echo $row['id'];?></td>
 		                              <td><?php echo $row['lokasi_tanah'];?></td>
-									  <td><?php echo $row['luas_tanah'];?></td>              
+									  <td><?php echo $row['luas_tanah'];?></td>    									  
 		                          </tr>
+								  <?php }?>
+								  
 		                          </tbody>
 		                      </table>
 	 
