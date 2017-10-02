@@ -1,5 +1,17 @@
 <?php
-	require_once 'class.users.pengelola.php';  $user = new User(); // Checking for user logged in or not
+require_once 'class.users.php';  $user = new User(); // Checking for user logged in or not
+
+ if (isset($_REQUEST['submit'])){
+	extract($_REQUEST);
+	$register = $user->reg_user($username, $password, $name);
+	if ($register) {
+		// Registration Success
+		echo 'Registration successful <a href="login.php">Click here</a> to login';
+	} else {
+		// Registration Failed
+		echo 'Registration failed. Email or Username already exits please try again';
+	}
+ }
     // Define variables and initialize with empty values
 
     $username = $password = $confirm_password = $name = "";

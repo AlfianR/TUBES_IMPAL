@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -22,12 +23,38 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="$1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>test</title>
+	
+	<?php
+    include_once 'db_tanah.php';
+    ?>
   </head>
 
   <body>
 
   <section id="container" >
+	  <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>PROFILE</b></a>
+            <!--logo end-->
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="/SistemInventarisBarang/index.html">Logout</a></li>
+            </div>
+        </header>
+      <!--header end-->
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -80,7 +107,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="profile.php">Profile</a></li>
-                          <li><a  href="/SistemInventarisBarang/login.php">Log Out</a></li>
+                          <li><a  href="/SistemInventarisBarang/index.html">Log Out</a></li>
                       </ul>
                   </li>
 
@@ -95,7 +122,6 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-	  	
      <section id="main-content">
           <section class="wrapper">
 				
@@ -111,7 +137,7 @@
 						<label for="luas_tanah">Luas Tanah:</label>
 						<input type="text" name="luas_tanah" id="luas_tanah">    
 					</p>
-					<input type="submit" value="Submit">
+					<input type="submit" value="Submit" name="submit">
 				</form>
 		</section>
 	</section>

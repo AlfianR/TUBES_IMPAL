@@ -10,13 +10,13 @@
 
     define('DB_PASSWORD', '');
 
-    define('DB_NAME', 'databarang');
+    define('DB_NAME', 'tanah_oop');
 
      
 
     /* Attempt to connect to MySQL database */
 
-    $link = mysqli_connect('localhost', 'root', '', 'databarang');
+    $link = mysqli_connect('localhost', 'root', '', 'tanah_oop');
      
 
     // Check connection

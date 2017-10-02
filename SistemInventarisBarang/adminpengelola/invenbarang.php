@@ -39,7 +39,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="/SistemInvnetarisBarang/login.php">Logout</a></li>
+                    <li><a class="logout" href="/SistemInventarisBarang/index.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -97,7 +97,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="profile.php">Profile</a></li>
-                          <li><a  href="/SistemInventarisBarang/login.php">Log Out</a></li>
+                          <li><a  href="/SistemInventarisBarang/index.html">Log Out</a></li>
                       </ul>
                   </li>
 
@@ -136,7 +136,7 @@
 								   <?php
 								   
 										
-										$con=mysqli_connect("localhost","root","","databarang");
+										$con=mysqli_connect("localhost","root","","barang_oop");
 										// Check connection
 										if (mysqli_connect_errno())
 										{

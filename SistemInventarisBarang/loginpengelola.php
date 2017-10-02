@@ -1,11 +1,22 @@
-    <?php
+   <?php
 
     // Include config file
 
-    require_once 'configuser.php';
-
-     
-
+	session_start();
+	include_once 'class.users.pengelola.php';
+	$user = new User();
+	
+	if (isset($_REQUEST['submit'])) {
+		extract($_REQUEST);
+	    $login = $user->check_login($username, $password);
+	    if ($login) {
+	        // Registration Success
+	       header("location:home.php");
+	    } else {
+	        // Registration Failed
+	        echo 'Wrong username or password';
+	    }
+	}
     // Define variables and initialize with empty values
 
     $username = $password =  "";

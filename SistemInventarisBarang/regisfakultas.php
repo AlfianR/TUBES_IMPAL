@@ -1,12 +1,5 @@
-
-
-    <?php
-
-    // Include config file
-
-    require_once 'configuser.php';
-
-     
+<?php
+	require_once 'class.users.fakultas.php';  $user = new User(); // Checking for user logged in or not
 
     // Define variables and initialize with empty values
 

@@ -34,7 +34,7 @@
     <title>test</title>
 
     <?php
-    include_once 'configbarang.php';
+    include_once 'db_barang.php';
     ?>
   </head>
 
@@ -51,7 +51,7 @@
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="/SistemInventarisBarang/login.php">Logout</a></li>
+                    <li><a class="logout" href="/SistemInventarisBarang/index.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -109,7 +109,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="profile.php">Profile</a></li>
-                          <li><a  href="/SistemInventarisBarang/login.php">Log Out</a></li>
+                          <li><a  href="/SistemInventarisBarang/index.html">Log Out</a></li>
                       </ul>
                   </li>
 
@@ -124,7 +124,6 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-	  	
      <section id="main-content">
           <section class="wrapper">
 				
@@ -140,7 +139,7 @@
 						<label for="status_barang">Status Barang:</label>
 						<input type="text" name="status_barang" id="status_barang">    
 					</p>
-					<input type="submit" value="Submit">
+					<input type="submit" value="Submit" name="submit">
 				</form>
 		</section>
 	</section>
